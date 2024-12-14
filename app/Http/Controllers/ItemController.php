@@ -24,8 +24,8 @@ class ItemController extends Controller
     public function index()
     {
         // 商品一覧取得
-        $items = Item::all();
-
+        $user_id = Auth::id();
+        $items = Item::where('user_id', $user_id)->get();
         return view('item.index', compact('items'));
     }
 
@@ -53,5 +53,16 @@ class ItemController extends Controller
         }
 
         return view('item.add');
+    }
+
+    /**
+     * 商品削除
+     */
+    public function delete(Request $request)
+    {
+        $items = Item::find($request->id);
+        $items->delete();
+
+        return redirect('/items');
     }
 }
