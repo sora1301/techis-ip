@@ -1,44 +1,28 @@
 ## 商品管理システム
 
-### 環境構築手順
+### 概要
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLのデータベース作成（名前：item_management）
-* Macの場合 .env の DB_PASSWORD を root に修正（Windowsは修正不要）
+このシステムでは、店舗で商品の在庫管理を行うことができます。
+商品の新規登録、削除を行うことができます。
 
-    ```INI
-    DB_PASSWORD=root
-    ```
+## 主な機能
+- ユーザー登録
+- ログイン・ログアウト機能
+- 商品一覧画面
+- 商品新規登録、削除機能
 
-* APP_KEY生成
+## 開発環境
+php 
+MySQL 
+Laravel 
 
-    ```console
-    php artisan key:generate
-    ```
+### システム閲覧
+[アプリケーションページへ](https://techis-ip-c7ed8cfb4cb7.herokuapp.com/login)
 
-* Composerインストール
+### テストアカウント情報
 
-    ```console
-    composer install
-    ```
+メールアドレス：st.test@example.com
 
-* フロント環境構築
+パスワード：123456789
 
-    ```console
-    npm ci
-    npm run build
-    ```
-
-* マイグレーション
-
-    ```console
-    php artisan migrate
-    ```
-
-* 起動
-
-    ```console
-    php artisan serve
-    ```
 # techis-ip
